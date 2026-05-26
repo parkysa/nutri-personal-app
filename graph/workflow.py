@@ -7,7 +7,7 @@ class Workflow():
         self.workflow = StateGraph(State)
         
         
-    def configura_graph(self, workflow):
+    def configura_graph(self):
 
         # adiciona nós
         self.workflow.add_node("classificador")
@@ -21,6 +21,6 @@ class Workflow():
         # self.workflow.add_edge()
         # self.workflow.add_edge()
 
-    def compila_grafo(self, workflow):
-        graph = workflow.compile()
+    def compila_grafo(self):
+        graph = self.workflow.compile()
         return graph

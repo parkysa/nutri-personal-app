@@ -18,10 +18,11 @@ class NutriPersonalApp():
         print("Exemplo: 'Quero o combo hoje. Tenho frango, ovo e batata doce. Foco em ganho de massa.'")
         return input("\nDigite aqui: ")
     
-    def _resultado(self):
+    def _resultado(self, resultado):
         print("\n" + "=" * 50)
         print("RESULTADO DO SEU ASSISTENTE SMART")
         print("=" * 50)
+        print(resultado)
 
     def _run(self):
 
@@ -32,11 +33,15 @@ class NutriPersonalApp():
             "ingredientes": [],             
             "objetivo": "",
             "receita": None,
-            "treino": None
+            "treino": None,
+            "classificacao": None
         }
 
         resultado = self.compiled_graph.invoke(estado_inicial)
 
+        return resultado
+
 if __name__ == "__main__":
     app = NutriPersonalApp()
-    app._run()
+    app._resultado(app._run())
+

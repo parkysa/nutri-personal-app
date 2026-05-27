@@ -6,4 +6,5 @@ class State(TypedDict):
     objetivo: str
     receita: Optional[str]
     treino: Optional[str]
+    classificacao: str
     
